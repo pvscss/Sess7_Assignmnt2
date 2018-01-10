@@ -1,0 +1,21 @@
+Task 1:
+data(mtcars)
+par(mfrow=c(2,4))
+for(i in 8:11) {
+counts<-table(mtcars[,i])
+print(counts)
+name<-names(mtcars)[i]
+barplot(counts,main=name)
+}
+
+Task 2 :
+data(mtcars)
+summary(mtcar$gear)
+pairs(factor(gear)~.,data=mtcars,col=factor(mtcars$gear))
+
+Task 3:
+library(caret)
+x<-mtcars[,c(1,3,4,5,6,7)]
+y<-as.factor(mtcas[,2])
+scales<-list(x=list(relation="free"),y=list(relation="free"))
+featurePlot(x=x,y=y,plot="density",scales=scales)
